@@ -1,0 +1,31 @@
+header {
+  background-color: #ebeef0;
+  border-bottom: 1px solid #BDBDBD;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav__name {
+  color: inherit;
+  padding: 20px 10px;
+}
+
+.nav__name h4 {
+  margin: 0;
+}
+
+.nav__search-input {
+  /* width: 300px; */
+  padding: 5px;
+}
+
+.nav__search-button {
+  padding: 5px 40px;
+  margin-left: 10px;
+  border: 2px solid var(--color-info);
+  color: var(--color-info);
+}

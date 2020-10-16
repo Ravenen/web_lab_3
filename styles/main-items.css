@@ -1,0 +1,32 @@
+.main__items {
+  width: 100%;
+}
+
+.main__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main__buttons-create,
+.main__buttons-deleteall {
+  margin-right: 20px;
+  padding: 10px 0;
+  width: 130px;
+}
+
+.main__buttons-create {
+  background-color: var(--color-green);
+}
+
+.main__buttons-deleteall {
+  background-color: var(--color-red);
+}
+
+.main__items-container {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}

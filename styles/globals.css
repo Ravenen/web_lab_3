@@ -1,0 +1,55 @@
+:root {
+  --color-primary: #0275d8;
+  --color-green: #5cb85c;
+  --color-red: #d9534f;
+  --color-info: #5bc0de;
+}
+
+body {
+  background: #f2f5f7;
+  font-family: 'Rubik', sans-serif;
+  color: #4F5665;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #0B132A;
+  /* margin: 0; */
+  /* margin-bottom: 0; */
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+}
+
+.input-field {
+  border: 2px solid #BDBDBD;
+  border-radius: 5px;
+}
