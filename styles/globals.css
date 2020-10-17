@@ -35,6 +35,10 @@ h3 {
   font-size: 18px;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -47,9 +51,11 @@ h3 {
   font-weight: 500;
   color: white;
   cursor: pointer;
+  text-align: center;
 }
 
 .input-field {
   border: 2px solid #BDBDBD;
   border-radius: 5px;
+  font-size: 14px;
 }

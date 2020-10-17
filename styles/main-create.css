@@ -1,0 +1,98 @@
+.main-container.form {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: flex-start; */
+}
+
+.form__title {
+  text-align: center;
+}
+
+.form__control {
+  width: 350px;
+  margin-bottom: 12px;
+  padding-bottom: 20px;
+  position: relative;
+  display: block;
+}
+
+.form__control label {
+  color: #777;
+  display: block;
+  margin: 5px 0;
+}
+
+.form__control input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  /* margin: 0 10px; */
+  box-sizing: border-box;
+}
+
+.form__control-unit {
+  position: absolute;
+  top: 25px;
+  left: 2px;
+  width: 36px;
+  padding: 11px 0;
+  background-color: #ebeef0;
+  text-align: center;
+  font-size: 13px;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+}
+
+.form__control-forunit {
+  padding-left: 46px !important;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.checkbox input {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox label {
+  margin: 0 10px;
+}
+
+.form__control.success input {
+  border-color: var(--color-green);
+}
+
+.form__control.error input {
+  border-color: var(--color-red);
+}
+
+.form__control small {
+  color: var(--color-red);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form__control.error small {
+  visibility: visible;
+}
+
+.form__button {
+  width: 250px;
+  padding: 10px 0;
+  background-color: var(--color-green);
+}
+
+.form__control > .checkbox {
+  margin: 10px 20px;
+}
