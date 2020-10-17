@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Third Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="nav-container">
+          <a href="#" class="nav__name"><h4>Christmas Fair</h4></a>
+          <form class="nav__search" id="search_form">
+            <input
+              class="input-field nav__search-input"
+              type="text" id="search_input"
+              placeholder="Enter garland tag"
+            />
+            <button class="button nav__search-button">Search</button>
+          </form>
+        </nav>
+      </div>
+    </header>
+    <section class="main">
+      <div class="container">
+        <div class="main-container">
+          <aside class="main__tools">
+            <h3 class="tools__title">Manage Garlands</h3>
+            <div class="tools__toggle">
+              <p class="tools__toggle-label">Sort by the longest garlands</p>
+              <label class="tools__toggle-switch">
+                <input type="checkbox" id="sort">
+                <span class="tools__toggle-slider"></span>
+              </label>
+            </div>
+            <hr>
+            <div class="tools__count">
+              <p class="tools__count-label">Count total price of all garlands on the fair</p>
+              <button class="button tools__count-button" id="count">Count</button>
+              <div class="tools__count-results hidden" id="count_results">
+                <p class="tools__results-label">Total price:</p>
+                <p class="tools__results-result" id="count_total"></p>
+              </div>
+            </div>
+          </aside>
+          <div class="main__items">
+            <div class="main__buttons">
+              <button class="button main__buttons-create">Create</button>
+              <button class="button main__buttons-deleteall">Delete All</button>
+            </div>
+            <div class="main__items-container" id="items_container">
+
+              <!-- <div class="main__item">
+                <div class="item__image"><img src="img/garland.jpg" alt=""></div>
+                <h3 class="item__title">Garland</h3>
+                <p class="item__property">Color: green</p>
+                <p class="item__property">Length: 5 m</p>
+                <p class="item__property">Natural: <span class="item__bool-yes">Yes</span></p>
+                <div class="item__tags">
+                  <span class="item__tags-tag">indoor</span>
+                  <span class="item__tags-tag">outdoor</span>
+                  <span class="item__tags-tag">tree</span>
+                </div>
+                <p class="item__price">Price: $120</p>
+                <div class="item__buttons">
+                  <button class="button item__buttons-edit">Edit</button>
+                  <button class="button item__buttons-delete">Delete</button>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>

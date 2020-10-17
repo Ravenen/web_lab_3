@@ -1,0 +1,8 @@
+@import "normalize.min.css";
+@import "globals.css";
+
+@import "nav.css";
+@import "main.css";
+@import "main-tools.css";
+@import "main-items.css";
+@import "item.css";
