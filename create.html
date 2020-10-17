@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Third Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="nav-container">
+          <a href="index.html" class="nav__name"><h4>Christmas Fair</h4></a>
+          <h4 class="nav__name selected">New Garland</h4>
+        </nav>
+      </div>
+    </header>
+    <section class="main">
+      <div class="container">
+        <form id="form" class="main-container form">
+          <h2 class="form__title">Create Garland</h2>
+          <div class="form__control">
+            <label for="color">Color</label>
+            <input class="input-field" type="text" id="color" placeholder="Enter color" />
+            <small>Error message</small>
+          </div>
+          <div class="form__control">
+            <label for="length" class="input-field form__control-unit">m</label>
+            <label for="length">Length</label>
+            <input class="input-field form__control-forunit" type="number" step="any" id="length" placeholder="Enter length" />
+            <small>Error message</small>
+          </div>
+          <div class="form__control checkbox">
+            <input type="checkbox" id="natural"  />
+            <label for="natural">Natural</label>
+          </div>
+          <div class="form__control">
+            <label>Tags</label>
+            <div class="checkbox">
+              <input type="checkbox" id="tag_indoor_tree"  />
+              <label for="tag_indoor_tree">indoor tree</label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="tag_outdoor_tree"  />
+              <label for="tag_outdoor_tree">outdoor tree</label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="tag_house_interior"  />
+              <label for="tag_house_interior">house interior</label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="tag_house_exterior"  />
+              <label for="tag_house_exterior">house exterior</label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="tag_working_place"  />
+              <label for="tag_working_place">working place</label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="tag_door"  />
+              <label for="tag_door">door</label>
+            </div>
+            <small>Error message</small>
+          </div>
+          <div class="form__control">
+            <label for="price">Price</label>
+            <label for="price" class="input-field form__control-unit">UAH</label>
+            <input class="input-field form__control-forunit" type="number" step="any" id="price" placeholder="Enter price" />
+            <small>Error message</small>
+          </div>
+          <button class="button form__button" type="submit">Create</button>
+        </form>
+      </div>
+    </section>
+    <script type="module" src="./js/create.js"></script>
+  </body>
+</html>

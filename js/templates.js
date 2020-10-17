@@ -1,5 +1,5 @@
 export const formatMoney = (amount) => {
-  return `${amount} UAH`;
+  return `${amount.toFixed(2)} UAH`;
 };
 
 const formatBool = (bool) => {
@@ -11,7 +11,7 @@ const generateTags = (tags, filters) => {
   return tags.map(
     tag => {
       let sel_style = filters.length && filters.includes(tag) ? " sel" : "";
-      return `<span class="item__tags-tag${sel_style}">${tag}</span>`;
+      return `<span class="item__tags-tag${sel_style}">${tag.replace("_", " ")}</span>`;
     }
   ).join("\n")
 }
@@ -26,7 +26,7 @@ export const itemTemplate = ({ id, color, length_in_metres, is_natural, decor_ty
   <div class="item__tags">${generateTags(decor_type, filters)}</div>
   <p class="item__price">Price: ${formatMoney(price_in_uah)}</p>
   <div class="item__buttons">
-    <button class="button item__buttons-edit">Edit</button>
-    <button class="button item__buttons-delete">Delete</button>
+    <button class="button item__buttons-edit" id="btn-edit-${id}">Edit</button>
+    <button class="button item__buttons-delete" id="btn-delete-${id}">Delete</button>
   </div>
 </div>`;

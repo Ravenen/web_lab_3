@@ -1,6 +1,13 @@
-import {formatMoney, itemTemplate} from './templates.js';
+import { formatMoney, itemTemplate } from "./templates.js";
+import {
+  HOST_REQUEST,
+  sortByLengthDescending,
+  calculateTotalPrice,
+  searchItemsByValueInDecorType,
+  addItemToPage
+} from "./item_utils.js";
 
-const itemsContainer = document.getElementById('items_container');
+const itemsContainer = document.getElementById("items_container");
 const sortCheckbox = document.getElementById("sort");
 const countBtn = document.getElementById("count");
 const countResults = document.getElementById("count_results");
@@ -15,7 +22,7 @@ let foundByFilters = [];
 updateItems();
 
 async function updateItems() {
-  const res = await fetch('http://127.0.0.1:5000/garlands');
+  const res = await fetch(HOST_REQUEST);
   const data = await res.json();
 
   itemsOriginal = Array.from(data);
@@ -26,22 +33,8 @@ async function updateItems() {
 function updateItemsDOM(dataArray) {
   itemsContainer.innerHTML = "";
   dataArray.forEach(item => {
-    itemsContainer.insertAdjacentHTML("afterbegin", itemTemplate(item, foundByFilters.flat()));
+    addItemToPage(itemsContainer, item, itemTemplate, foundByFilters.flat(), updateItems);
   });
-}
-
-function calculateTotal(dataArray, key) {
-  const total = dataArray.reduce((acc, item) => (acc + key(item)), 0);
-  return total;
-}
-
-function searchItemsByValue(dataArray, value, key) {
-  const foundItems = dataArray.filter((item) => {
-    let fitElements = key(item).filter((nestedItem) => nestedItem.includes(value));
-    foundByFilters.push(fitElements);
-    return fitElements.length;
-  });
-  return foundItems;
 }
 
 searchForm.addEventListener("submit", (event) => {
@@ -53,7 +46,7 @@ searchForm.addEventListener("submit", (event) => {
   if (!searchingData) {
     itemsCurrent = Array.from(itemsOriginal);
   } else {
-    itemsCurrent = searchItemsByValue(itemsOriginal, searchingData, (item) => item.decor_type);
+    itemsCurrent = searchItemsByValueInDecorType(itemsOriginal, searchingData, foundByFilters);
   }
   updateItemsDOM(itemsCurrent);
   sortCheckbox.checked = false;
@@ -61,14 +54,14 @@ searchForm.addEventListener("submit", (event) => {
 
 countBtn.addEventListener("click", () => {
   countResults.classList.remove("hidden");
-  const totalPrice = calculateTotal(itemsCurrent, (item) => item.price_in_uah);
+  const totalPrice = calculateTotalPrice(itemsCurrent);
   countTotal.innerHTML = formatMoney(totalPrice);
 });
 
 sortCheckbox.addEventListener("change", () => {
   let sortedItems = Array.from(itemsCurrent);
   if (sortCheckbox.checked) {
-    sortedItems.sort((first, second) => (first.length_in_metres - second.length_in_metres));
+    sortedItems = sortByLengthDescending(sortedItems);
   }
   updateItemsDOM(sortedItems);
 });

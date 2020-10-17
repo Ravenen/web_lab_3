@@ -44,6 +44,7 @@
 
 .item__tags {
   margin: 5px 0;
+  padding-bottom: 5px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -61,6 +62,7 @@
 }
 
 .item__price {
+  margin-top: auto;
   font-weight: 500;
 }
 
